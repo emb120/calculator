@@ -9,9 +9,9 @@ exports.calculate = function(req, res) {
     res.status(400);
     res.json({ error: err.message });
   });
-
+// Using + operator to type cast variables as integers 
   var operations = {
-    'add':      function(a,b) { return a + b },
+    'add':      function(a,b) { return +a + +b },
     'subtract': function(a,b) { return a - b },
     'multiply': function(a,b) { return a * b },
     'divide':   function(a,b) { return a / b },
@@ -48,3 +48,4 @@ exports.calculate = function(req, res) {
 
   res.json({ result: operation(req.query.operand1, req.query.operand2) });
 };
+// test
